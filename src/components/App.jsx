@@ -13,7 +13,6 @@ export function App() {
 
   // Завантаження списку контактів
   useEffect(() => {
-    console.log('useeffect');
     dispatch(fetchContacts());
   }, [dispatch]);
 
@@ -25,6 +24,13 @@ export function App() {
           <b>Contacts are loading...</b>
         </div>
       )}
+
+      {error && (
+        <div>
+          <b>{error}</b>
+        </div>
+      )}
+
       <Filter />
       <ContactList />
     </div>
